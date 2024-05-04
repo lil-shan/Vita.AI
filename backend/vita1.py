@@ -1,5 +1,7 @@
+import os
 
 import streamlit as st
+from dotenv import load_dotenv
 import google.generativeai as gen_ai
 
 
@@ -28,6 +30,7 @@ def translate_role_for_streamlit(user_role):
     else:
         return user_role
 
+admin_prompt = " Welcome to the medical AI assistant describe your medical condition for diagnosis."
 
 # Initialize chat session in Streamlit if not already present
 if "chat_session" not in st.session_state:
@@ -49,7 +52,7 @@ if user_prompt:
     st.chat_message("user").markdown(user_prompt)
 
     # Send user's message to Gemini-Pro and get the response
-    gemini_response = st.session_state.chat_session.send_message(user_prompt)
+    gemini_response = st.session_state.chat_session.send_message(admin_prompt + " " + user_prompt)
 
     # Display Gemini-Pro's response
     with st.chat_message("assistant"):
