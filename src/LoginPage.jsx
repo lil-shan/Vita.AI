@@ -64,7 +64,7 @@ function LoginPage() {
         <button
           onClick={(e) => {
             e.preventDefault();
-            window.location.href = "";
+            window.location.href = "https://docvisual.streamlit.app/";
           }}
           style={{
             fontFamily: "'Poppins', sans-serif",
