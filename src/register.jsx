@@ -1,5 +1,18 @@
 import React, { useState } from "react";
+import Lottie from "lottie-react";
+import bg from "./bg.json";
 
+const styles = {
+  marginTop: 100,
+  paddingtop: 0,
+  marginLeft: 600,
+  width: "60%",
+  height: "60%",
+  zindex: -1,
+  position: "absolute",
+  opacity: 0.5,
+  overflow: "hidden",
+};
 const DoctorLogin = () => {
   const [fullName, setFullName] = useState("");
   const [registerNumber, setRegisterNumber] = useState("");
@@ -41,6 +54,8 @@ const DoctorLogin = () => {
         fontFamily: "'Poppins', sans-serif",
       }}
     >
+      <Lottie style={styles} animationData={bg} />
+
       <h1
         style={{
           margin: "45px 0",
@@ -204,6 +219,10 @@ const DoctorLogin = () => {
           />
         </div>
         <button
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "https://verfication.streamlit.app/";
+          }}
           type="submit"
           style={{
             backgroundColor: "#38b6ff",

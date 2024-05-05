@@ -2,7 +2,7 @@ import React from "react";
 
 function MainContent() {
   return (
-    <main style={{ textAlign: "center" }}>
+    <main style={{ textAlign: "center", zIndex: 1, position: "relative" }}>
       <h1
         style={{
           fontFamily: "'Poppins', sans-serif",
@@ -18,23 +18,29 @@ function MainContent() {
       <p
         style={{
           fontFamily: "'Poppins', sans-serif",
-          fontWeight: 700,
+          fontWeight: "530",
           fontSize: 32,
-
           marginLeft: 400,
           marginRight: 400,
           marginBottom: 80,
         }}
       >
-        Welcome to Scancer, where cutting-edge technology meets compassionate
-        care. Experience healthcare redefined.
+        Welcome to <span style={{ color: "#38b6ff" }}>Vita-AI</span>, where
+        cutting-edge technology meets compassionate care. Experience healthcare
+        redefined.
       </p>
       <div
         className="buttons"
-        style={{ display: "flex", justifyContent: "center", gap: 120 }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 120,
+          zIndex: 1,
+          position: "relative",
+        }}
       >
         {/* Styles for both buttons */}
-        <a href="/">
+        <a href="https://vita-ai-here.streamlit.app/">
           <button
             className="vita-ai"
             style={{
@@ -54,7 +60,10 @@ function MainContent() {
           </button>
         </a>
 
-        <a href="/" style={{ textDecoration: "none" }}>
+        <a
+          href="https://button4scan.streamlit.app/"
+          style={{ textDecoration: "none" }}
+        >
           <button
             className="scanner"
             style={{
